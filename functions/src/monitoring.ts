@@ -85,11 +85,14 @@ export class MonitoringService {
       });
     } catch (error) {
       // Mark the report as failed but still save the counts if available
-      await this.db.collection("monitoring").doc(reportId).update({
-        status: "failed",
-        error: error.message,
-        completedAt: Timestamp.now(),
-      });
+      await this.db
+        .collection("monitoring")
+        .doc(reportId)
+        .update({
+          status: "failed",
+          error: JSON.stringify(error),
+          completedAt: Timestamp.now(),
+        });
 
       throw error;
     }

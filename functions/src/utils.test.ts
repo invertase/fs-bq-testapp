@@ -2,7 +2,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { DocumentGenerator, BatchWriter } from "./utils";
 import { TestDocument } from "./types";
-import { getFirestore, Timestamp } from "firebase-admin/firestore";
+import { getFirestore } from "firebase-admin/firestore";
 import { CONFIG } from "./config";
 
 // Mock firebase-admin/firestore

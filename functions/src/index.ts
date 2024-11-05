@@ -1,5 +1,4 @@
-import { getFirestore, Timestamp, WriteBatch } from "firebase-admin/firestore";
-import { TestDocument } from "./types";
+import { getFirestore, Timestamp } from "firebase-admin/firestore";
 import { CONFIG } from "./config";
 
 // functions/src/index.ts
@@ -7,7 +6,7 @@ import { initializeApp } from "firebase-admin/app";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import { logger } from "firebase-functions";
 import { DocumentGenerator, BatchWriter } from "./utils";
-import { BigQueryConfig, MonitoringService } from "./monitoring";
+import { MonitoringService } from "./monitoring";
 
 initializeApp({
   projectId: CONFIG.projectId,

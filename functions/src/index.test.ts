@@ -5,7 +5,6 @@ import { logger } from "firebase-functions";
 import { CONFIG } from "./config";
 import { ScheduledEvent } from "firebase-functions/v2/scheduler";
 import { bulkWriteDocuments, cleanupOldDocuments } from "./index";
-import { MonitoringService } from "./monitoring";
 
 // Mock firebase-admin/firestore
 vi.mock("firebase-admin/firestore", () => {
