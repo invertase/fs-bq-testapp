@@ -1,6 +1,6 @@
 export const CONFIG = {
   collections: {
-    stressTest: "stress_test_docs",
+    stressTest: "this/is/stress_test_docs",
   },
   schedules: {
     bulkWrite: "* 9-16 * * *", // Every minute between 9:00-16:59 (9 AM - 5 PM)

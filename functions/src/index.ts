@@ -1,12 +1,12 @@
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import { CONFIG } from "./config";
+import { CONFIG } from "./config.js";
 
 // functions/src/index.ts
 import { initializeApp } from "firebase-admin/app";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import { logger } from "firebase-functions";
-import { DocumentGenerator, BatchWriter } from "./utils";
-import { MonitoringService } from "./monitoring";
+import { DocumentGenerator, BatchWriter } from "./utils.js";
+import { MonitoringService } from "./monitoring.js";
 
 initializeApp({
   projectId: CONFIG.projectId,
@@ -27,6 +27,11 @@ export const bulkWriteDocuments = onSchedule(
     schedule: CONFIG.schedules.bulkWrite,
   },
   async (event) => {
+    logger.info("Bulk write started", {
+      collection: CONFIG.collections.stressTest,
+      totalDocuments: CONFIG.write.totalDocuments,
+      batchSize: CONFIG.write.batchSize,
+    });
     const startTime = Date.now();
     const batchWriter = new BatchWriter();
     let totalWritten = 0;

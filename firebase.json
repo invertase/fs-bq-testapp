@@ -21,6 +21,9 @@
     }
   ],
   "emulators": {
+    "pubsub": {
+      "port": 8085
+    },
     "functions": {
       "port": 5001
     },

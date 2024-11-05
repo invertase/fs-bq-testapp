@@ -1,7 +1,7 @@
 // functions/src/utils.ts
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import { TestDocument } from "./types";
-import { CONFIG } from "./config";
+import { TestDocument } from "./types.js";
+import { CONFIG } from "./config.js";
 
 export class DocumentGenerator {
   private static testRunId = Math.random().toString(36).substring(7);
